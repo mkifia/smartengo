@@ -1,0 +1,57 @@
+version: '3.9'
+services:
+  apache:
+    build: .docker/apache
+    ports:
+      - 82:80
+    volumes:
+      - .docker/config/vhosts:/etc/apache2/sites-enabled
+      - ${API_APP}:/var/www/api
+    depends_on:
+      - api
+
+  api:
+    build: .docker/php
+    volumes:
+      - ${API_APP}:/var/www/api
+    depends_on:
+      - db
+
+  nest:
+    build: .docker/node
+    ports:
+      - 8000:3000
+    volumes:
+      - ${NEST_APP}:/home/node/app
+    depends_on:
+      - db
+    command: npm run start:dev
+
+  db:
+    build: .docker/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+    - .dbdate:/var/lib/mysql
+
+  nginx:
+    build: .docker/nginx
+    volumes:
+      - ${ANGULAR_APP}:/usr/share/nginx/html
+    ports:
+      - "80:80"
+      - "443:443"
+
+  front:
+    build: .docker/node
+    ports:
+      - 4200:4200
+    volumes:
+      - ${ANGULAR_APP}:/home/node/app
+    command: npm install -g @angular/cli && npm cache clean --force
+    expose:
+      - "4200"
