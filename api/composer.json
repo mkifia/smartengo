@@ -74,6 +74,6 @@
             "require": "5.2.*"
         }
     },
-    "name": "api-smartengo",
+    "name": "smartengo/api",
     "description": ""
 }
