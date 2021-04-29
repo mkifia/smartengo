@@ -39,7 +39,7 @@ class Tag
     /**
      * @ORM\ManyToMany(targetEntity=Article::class, mappedBy="tags")
      */
-    private ArrayCollection $articles;
+    private Collection $articles;
 
     public function __construct()
     {

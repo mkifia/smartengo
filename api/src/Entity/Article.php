@@ -54,17 +54,17 @@ class Article
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", orphanRemoval=true)
      */
-    private ArrayCollection $comments;
+    private Collection $comments;
 
     /**
      * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="articles")
      */
-    private ArrayCollection $tags;
+    private Collection $tags;
 
     /**
      * @ORM\OneToMany(targetEntity=Reaction::class, mappedBy="article", orphanRemoval=true)
      */
-    private ArrayCollection $reactions;
+    private Collection $reactions;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
