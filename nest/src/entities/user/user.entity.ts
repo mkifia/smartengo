@@ -17,9 +17,9 @@ export class UserEntity {
     @Column()
     role: string;
 
-    @Column({type: "datetime", default: () => `now()`})
+    @Column({type: "datetime", default: () => `now()`, name: "created_at"})
     createdAt: Date;
 
-    @Column({type: "datetime", default: () => `now()`})
+    @Column({type: "datetime", default: () => `now()`, name: "updated_at"})
     updatedAt: Date;
 }

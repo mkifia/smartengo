@@ -16,4 +16,8 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
         }
         return user;
     }
+
+    async accessToken(user: any) {
+        return this.authService.login(user)
+    }
 }

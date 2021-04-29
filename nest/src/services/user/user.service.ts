@@ -24,15 +24,18 @@ export class UserService {
     }
 
     async create(dto: RegisterDto): Promise<UserEntity> {
+
         if (dto.password !== dto.password_confirm) {
             throw new BadRequestException('passwords do not match');
         }
         dto.createdAt = dto.updatedAt = new Date();
         dto.password = await bcrypt.hash(dto.password, 12);
-        return await this.userRepository.save(dto);
+
+        let {password_confirm, ...user} = dto
+        return await this.userRepository.save(user);
     }
 
-    async retrieve(user) {
+    async retrieve(user): Promise<UserEntity> {
         return await this.userRepository.findOne(user);
     }
 }
