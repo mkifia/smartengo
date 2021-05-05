@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {VariablesService} from "../common/variables.service";
+import {VariablesService} from "../../common/variables.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Injectable({
