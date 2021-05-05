@@ -9,6 +9,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV HOME=/home/node
 
 WORKDIR /home/node/app
+RUN mkdir /home/node/app/dist
 
 RUN npm install -g @angular/cli
 
