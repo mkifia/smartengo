@@ -26,6 +26,7 @@
     "@angular/router": "~11.2.11",
     "@nguniversal/express-engine": "^11.2.1",
     "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.1",
     "express": "^4.15.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

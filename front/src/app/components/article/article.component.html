@@ -1,1 +1,104 @@
-<p>article works!</p>
+<div class="container row">
+  <div class="main left article col-7 border">
+    <div class="row name">
+      <div class="row d-flex justify-content-between">
+        <span class="title">Article Title</span>
+        <span class="actions">
+          <i class="bi bi-sticky"></i>
+          <i class="bi bi-pencil-square"></i>
+        </span>
+      </div>
+    </div>
+    <div class="row reference">
+      <span>Author: John Doe</span> - <span>Published at 11 Nov 2021</span>
+    </div>
+    <br>
+    <div class="row content">
+      <div class="col-10">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquam, aliquid animi atque, commodi consectetur consequatur debitis dolorem eius eum,
+          exercitationem explicabo fugiat neque perspiciatis quae quidem sed soluta tempora voluptatem!
+        </p>
+      </div>
+    </div>
+    <div class="row reaction d-flex justify-content-end">
+      <span><i class="bi bi-heart-fill"></i> 5</span>
+      <span><i class="bi bi-lightbulb"></i> 12</span>
+      <span><i class="bi bi-hand-thumbs-up"></i> 35</span>
+    </div>
+    <div class="row comments">
+      <div class="comment">
+        <div class="col-3 avatar">
+          <i class="bi bi-person-square"></i>
+        </div>
+        <div class="col-8">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto autem consequatur deleniti dicta dignissimos dolor eius eligendi eos error esse ipsam modi natus omnis quam, qui ratione recusandae.
+          </p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="col-3 avatar">
+          <i class="bi bi-person-square"></i>
+        </div>
+        <div class="col-8">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet architecto autem consequatur deleniti dicta dignissimos dolor eius eligendi eos error esse ipsam modi natus omnis quam, qui ratione recusandae.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="new-comment">
+      <textarea formControlName="comment" rows="3" class="form-control"></textarea>
+    </div>
+    <div class="row">
+      <button type="submit">Comment</button>
+    </div>
+  </div>
+  <div class="right articles col-5 border">
+    <div class="row logout d-flex justify-content-end">
+      <a href="">logout</a>
+    </div>
+    <div class="row search">
+      <div class="mb-3">
+        <input type="text" class="form-control search-article" id="search-article" placeholder="search">
+      </div>
+    </div>
+    <div class="row filter">
+      <div class="col">
+        <input type="text" class="form-control search-tag" id="search-tag" placeholder="search by tags">
+      </div>
+      <div class="col">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+    <div class="row count">
+      <hr>
+      <span class="text-right">14 results found</span>
+    </div>
+    <div class="row article">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque ex, exercitationem illum, impedit inventore ipsa iste iure minima numquam officia provident quae quam quos sapiente similique sint tempora voluptates.
+      </p>
+    </div>
+    <div class="row article">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque ex, exercitationem illum, impedit inventore ipsa iste iure minima numquam officia provident quae quam quos sapiente similique sint tempora voluptates.
+      </p>
+    </div>
+    <div class="row article">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque ex, exercitationem illum, impedit inventore ipsa iste iure minima numquam officia provident quae quam quos sapiente similique sint tempora voluptates.
+      </p>
+    </div>
+    <div class="row">
+      <button type="submit">Load more</button>
+    </div>
+  </div>
+</div>
